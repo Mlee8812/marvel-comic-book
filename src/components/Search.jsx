@@ -1,18 +1,28 @@
 import "../styles/Search.scss";
 import {useState} from "react";
+import md5 from "md5";
 
 export default function Search() {
     const [characterName, setCharacterName] = useState("");
     const [characterData, setCharacterData] = useState(null);
     const [comicData, setComicData] = useState(null);
+
+    const publicKey = import.meta.env.publicKey
+    const privateKey = import.meta.env.privateKey
     const handleSubmit = (event) => {
         event.preventDefault();
         getCharacterData();
-
     };
-
     const getCharacterData = () => {
+        setCharacterData(null);
+        setComicData(null);
 
+        const timeStamp = new Date().getTime();
+        const hash = generateHash(timeStamp);
+    }
+
+    const generateHash = (timeStamp) => {
+        return md5(timeStamp + publicKey + privateKey);
     }
     const handleChange = (event) => {
         setCharacterName(event.target.value);
