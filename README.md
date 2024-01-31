@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Marvel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Marvel Comic Book Library App
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+What is your app? Brief description in a couple of sentences.
 
-### `npm start`
+The Marvel Comic Book Library App is a digital platform designed to provide comic book enthusiasts with easy access to a vast collection of Marvel comics. It offers an intuitive interface for exploring, discovering, and reading Marvel comics.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Problem
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Why is your app needed? Background information around any pain points or other reasons.
 
-### `npm test`
+The app addresses the need for a centralized, user-friendly repository for Marvel comics, catering to the evolving digital consumption habits of comic book readers. It aims to enhance the reading experience by providing a comprehensive and easily navigable library of Marvel comics.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User Profile
 
-### `npm run build`
+Who will use your app? How will they use it? Any special considerations that your app must take into account.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The primary users are comic book enthusiasts, particularly those who are fans of the Marvel universe. They will use the app to search for their favorite Marvel characters and access the comics associated with them. The app must be intuitive, responsive, and inclusive, accommodating a wide range of users from casual readers to avid collectors.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
 
-### `npm run eject`
+Functionality:
+Search functionality to browse through Marvel's characters and their associated comic books.
+Ability to fetch detailed information about comic books featuring specific characters.
+User-friendly interface for seamless navigation and reading experience.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Implementation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Tech Stack:
+Frontend: React.js, SCSS
+Backend: Node.js
 
-## Learn More
+Some dependicies that I would need to add will be:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+"react"
+"react-dom"
+"axios"
+"react-router-dom"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### APIs
 
-### Code Splitting
+List any external sources of data that will be used in your app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+APIs:
+Marvel's official API for accessing character and comic book data.
 
-### Analyzing the Bundle Size
+### Sitemap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+List the pages of your app with brief descriptions. You can show this visually, or write it out.
 
-### Making a Progressive Web App
+Sitemap:
+Character Page: Enables users to search for Marvel characters.
+Comic Book Page: Displays comic books related to the selected character.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Mockups
 
-### Advanced Configuration
+Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![image](https://github.com/Mlee8812/Marvel/assets/97935821/46bed3eb-c809-4c61-a244-c66c202e2038)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
 
-### `npm run build` fails to minify
+The app will handle data related to Marvel characters and their comic books, including titles, publication dates, authors, and storylines.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![diagram](https://github.com/Mlee8812/Marvel/assets/97935821/ead430e8-f9e3-403c-a077-17146ee5b10f)
+
+
+### Endpoints
+
+List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+
+GET /characters: Retrieves a list of characters.
+GET /comics: Retrieves comics associated with a specific character.
+
+### Auth
+
+Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+
+No authentication or user profile functionality is currently planned for this version of the app.
+
+## Roadmap
+
+Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+
+Sprint 1: Develop the homepage with a search box and integrate character data fetching.
+Sprint 2: Implement functionality to display a list of characters based on search input.
+Sprint 3: Develop feature to show a list of comics associated with a selected character.
+
+## Nice-to-haves
+
+Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+
+Future implementation of a user login page.
+Addition of animations and interactive elements using JavaScript libraries.
