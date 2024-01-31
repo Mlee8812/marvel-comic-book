@@ -1,11 +1,21 @@
 import "../styles/Search.scss";
+import {useState} from "react";
 
 export default function Search() {
-    const handleSubmit = () => {
+    const [characterName, setCharacterName] = useState("");
+    const [characterData, setCharacterData] = useState(null);
+    const [comicData, setComicData] = useState(null);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        getCharacterData();
 
     };
-    const handleChange = () => {
 
+    const getCharacterData = () => {
+
+    }
+    const handleChange = (event) => {
+        setCharacterName(event.target.value);
     };
     const handleReset = () => {
 
@@ -21,7 +31,8 @@ export default function Search() {
                 />
                 <div className="button">
                     <button type="submit">Character Name</button>
-                    <button type="reset" className="reset" onClick={handleReset}
+                    <button type="reset" className="reset" onClick={handleReset}>
+                        Reset</button>
                 </div>
             </form>
         </>
