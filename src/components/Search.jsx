@@ -7,8 +7,8 @@ export default function Search() {
     const [characterData, setCharacterData] = useState(null);
     const [comicData, setComicData] = useState(null);
 
-    const publicKey = import.meta.env.publicKey
-    const privateKey = import.meta.env.privateKey
+    const publicKey = import.meta.env.MARVEL_PUBLIC_KEY;
+    const privateKey = import.meta.env.MARVEL_PRIVATE_KEY;
     const handleSubmit = (event) => {
         event.preventDefault();
         getCharacterData();
