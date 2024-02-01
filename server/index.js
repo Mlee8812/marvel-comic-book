@@ -35,7 +35,7 @@ app.post('/', async(req, res)=>{
     res.send(info.data)
 
 })
-app.post('/characterId', async(req, res)=>{
+app.post(':/characterId', async(req, res)=>{
     const {id} = req.body
     const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?id=${id}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     res.send(infoId.data)
