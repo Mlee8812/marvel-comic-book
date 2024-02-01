@@ -20,7 +20,7 @@ export default function Search() {
         const timeStamp = new Date().getTime();
         const hash = generateHash(timeStamp);
 
-        const url = 'https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${characterName}&limit=100'
+        const url = 'https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${character}&ts=${ts}&apikey=${publicKey}&hash=${hash}`'
 
         fetch(url).then(response => response.json())
             .then((result) => {
