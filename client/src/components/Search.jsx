@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from 'axios'; // Import axios
+import axios from 'axios';
 import "../styles/Search.scss";
 import Characters from "./Characters";
 import Comics from "./Comics";
@@ -16,7 +16,7 @@ export default function Search() {
 
     const getCharacterData = async () => {
         try {
-            const response = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?name=${characterName}`);
+            const response = await axios.post('http://localhost:8080/', { characterName });
             setCharacterData(response.data);
             setComicData(null);
         } catch (error) {
@@ -26,7 +26,7 @@ export default function Search() {
 
     const getComicData = async (characterId) => {
         try {
-            const response = await axios.get(`https://gateway.marvel.com:443/v1/public/comics?characterId=${characterId}`);
+            const response = await axios.post('http://localhost:8080/characterId', { id: characterId });
             setComicData(response.data);
             window.scrollTo({ top: 0, left: 0 });
         } catch (error) {
@@ -60,13 +60,18 @@ export default function Search() {
                 </div>
             </form>
 
-            {!comicData && characterData && characterData.results[0] && (
-                <Characters data={characterData.results} onClick={getComicData} />
-            )}
+            {
+                !comicData && characterData?.results?.length > 0 && (
+                    <Characters data={characterData.results} onClick={getComicData} />
+                )
+            }
 
-            {comicData && comicData.results[0] && (
-                <Comics data={comicData.results} onClick={() => {}} />
-            )}
+            {
+                comicData?.results?.length > 0 && (
+                    <Comics data={comicData.results} onClick={() => {}} />
+                )
+            }
+
         </>
     );
 }
