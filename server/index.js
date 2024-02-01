@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const port = process.env.PORT||10000;
+const port = process.env.PORT||8080;
 
 
 const cors = require('cors')
@@ -30,12 +30,12 @@ app.listen(port, ()=>{
 
 
 app.post('/', async(req, res)=>{
-    const {character} = req.body
-    const info = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${character}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    const {characterName} = req.body
+    const info = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${characterName}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     res.send(info.data)
 
 })
-app.post('/characterinfo', async(req, res)=>{
+app.post('/characterId', async(req, res)=>{
     const {id} = req.body
     const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?id=${id}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     res.send(infoId.data)
