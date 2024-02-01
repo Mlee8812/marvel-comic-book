@@ -19,11 +19,22 @@ export default function Search() {
 
         const timeStamp = new Date().getTime();
         const hash = generateHash(timeStamp);
-    }
+
+        const url = 'https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${characterName}&limit=100'
+
+        fetch(url).then(response => response.json())
+            .then((result) => {
+                setCharacterData(result.data);
+                console.log(result);
+        })
+            .catch(() => {
+                console.log("error while getting character data");
+            });
+    };
 
     const generateHash = (timeStamp) => {
-        return md5(timeStamp + publicKey + privateKey);
-    }
+        return md5(timeStamp + privateKey + publicKey);
+    };
     const handleChange = (event) => {
         setCharacterName(event.target.value);
     };
@@ -42,9 +53,14 @@ export default function Search() {
                 <div className="button">
                     <button type="submit">Character Name</button>
                     <button type="reset" className="reset" onClick={handleReset}>
-                        Reset</button>
+                        Reset
+                    </button>
                 </div>
             </form>
+
+            {!comicData && characterData && characterData.results[0] && (
+            <Characters data={characterData.results} onclick={getComicdata} />
+                )}
         </>
     );
 }
