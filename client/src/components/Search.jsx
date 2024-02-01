@@ -1,14 +1,11 @@
 import "../styles/Search.scss";
 import {useState} from "react";
-import md5 from "md5";
+import axios from 'axios'
 
 export default function Search() {
     const [characterName, setCharacterName] = useState("");
     const [characterData, setCharacterData] = useState(null);
     const [comicData, setComicData] = useState(null);
-
-    const publicKey = process.env.MARVEL_PUBLIC_KEY;
-    const privateKey = process.env.MARVEL_PRIVATE_KEY;
     const handleSubmit = (event) => {
         event.preventDefault();
         getCharacterData();
@@ -17,23 +14,6 @@ export default function Search() {
         setCharacterData(null);
         setComicData(null);
 
-        const timeStamp = new Date().getTime();
-        const hash = generateHash(timeStamp);
-
-        const url = 'https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${character}&ts=${ts}&apikey=${publicKey}&hash=${hash}`'
-
-        fetch(url).then(response => response.json())
-            .then((result) => {
-                setCharacterData(result.data);
-                console.log(result);
-        })
-            .catch(() => {
-                console.log("error while getting character data");
-            });
-    };
-
-    const generateHash = (timeStamp) => {
-        return md5(timeStamp + privateKey + publicKey);
     };
     const handleChange = (event) => {
         setCharacterName(event.target.value);

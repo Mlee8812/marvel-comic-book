@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const ts = new Date().getTime();
-const privateKey = process.env.PRIVATE_KEY
-const publicKey = process.env.PUBLIC_KEY
+const privateKey = process.env.MARVEL_PRIVATE_KEY
+const publicKey = process.env.MARVEL_PUBLIC_KEY
 
 
 const hash = crypto.createHash('md5').update(ts+privateKey+publicKey).digest('hex')
