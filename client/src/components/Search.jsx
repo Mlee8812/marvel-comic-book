@@ -26,13 +26,14 @@ export default function Search() {
 
     const getComicData = async (characterId) => {
         try {
-            const response = await axios.post('http://localhost:8080/characterId', { id: characterId });
+            const response = await axios.post(`http://localhost:8080/${characterId}`);
             setComicData(response.data);
             window.scrollTo({ top: 0, left: 0 });
         } catch (error) {
             console.error("Error fetching comic data:", error);
         }
     };
+
 
     const handleChange = (event) => {
         setCharacterName(event.target.value);
@@ -53,7 +54,7 @@ export default function Search() {
                     onChange={handleChange}
                 />
                 <div className="buttons">
-                    <button type="submit">Get Character Data</button>
+                    <button type="submit">Get Character Info</button>
                     <button type="reset" className="reset" onClick={handleReset}>
                         Reset
                     </button>
