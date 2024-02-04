@@ -80,7 +80,7 @@ app.post('/:characterId', async (req, res) => {
         const { characterId } = req.params;
         const ts = new Date().getTime();
         const hash = crypto.createHash('md5').update(ts + privateKey + publicKey).digest('hex');
-        const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters?id=${characterId}&ts=${ts}&apikey=${publicKey}&hash=${hash}`);
+        const infoId = await axios.get(`https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?&ts=${ts}&apikey=${publicKey}&hash=${hash}`);
         res.send(infoId.data);
     } catch (error) {
         res.status(500).send('Error fetching character data by ID');
