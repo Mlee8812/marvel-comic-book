@@ -62,14 +62,14 @@ export default function Search() {
             </form>
 
             {
-                !comicData && characterData?.results?.length > 0 && (
-                    <Characters data={characterData.results} onClick={getComicData} />
+                !comicData && characterData?.data?.results?.length > 0 && (
+                    <Characters data={characterData.data.results} onClick={getComicData} />
                 )
             }
 
             {
-                comicData?.results?.length > 0 && (
-                    <Comics data={comicData.results} onClick={() => {}} />
+                comicData?.data?.results?.length > 0 && (
+                    <Comics data={comicData.data.results} onClick={() => {}} />
                 )
             }
 
