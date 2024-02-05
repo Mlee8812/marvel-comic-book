@@ -6,70 +6,46 @@
 
 The Marvel Comic Book Library App is a digital platform designed to provide comic book enthusiasts with easy access to a vast collection of Marvel comics. It offers an intuitive interface for exploring, discovering, and reading Marvel comics.
 
-### Problem
+### Front-End Functionality
 
-The app addresses the need for a centralized, user-friendly repository for Marvel comics, catering to the evolving digital consumption habits of comic book readers. It aims to enhance the reading experience by providing a comprehensive and easily navigable library of Marvel comics.
+The Marvel Comic Book Library App is a full-stack application that showcases a seamless integration with the Marvel API, utilizing React and advanced JavaScript techniques for efficient state management and data propagation. The frontend is designed with a focus on the dynamic generation of character and comic book listings, where data is adeptly passed as props to components, ensuring a reactive and engaging user experience.
 
-### User Profile
+Key frontend routes include:
+- **Search**: A robust search feature allowing users to find characters and comics.
+- **Character List**: An interactive list displaying Marvel characters.
+- **Comic Book List**: A curated selection of comic books where each entry provides a gateway to Marvel's official site for further details.
 
-The primary users are comic book enthusiasts, particularly those who are fans of the Marvel universe. They will use the app to search for their favorite Marvel characters and access the comics associated with them. The app must be intuitive, responsive, and inclusive, accommodating a wide range of users from casual readers to avid collectors.
+### Back-End Functionality
 
-### Features
+The server-side of the Marvel Comic Book Library App is powered by Node.js, with Express as the web application framework and CORS to enable cross-origin resource sharing. This robust setup ensures that the backend is well-structured, secure, and capable of handling complex data flows.
 
-Functionality:
-Search functionality to browse through Marvel's characters and their associated comic books.
-Ability to fetch detailed information about comic books featuring specific characters.
-User-friendly interface for seamless navigation and reading experience.
-
-### Tech Stack
-
-Tech Stack:
-Frontend: React, SCSS, JavaScript
-Backend: Node.js, express, cors
-
-Some dependicies that I would need to add will be:
-
-"react"
-"react-dom"
-"axios"
-"react-router-dom"
-
-### APIs
-
-APIs:
-Marvel's official API for accessing character and comic book data.
-
-### Sitemap
-
-Character Page: Enables users to search for Marvel characters.
-Comic Book Page: Displays comic books related to the selected character.
+Key Endpoints
+- `POST /Character`: Fetches a list of Marvel characters.
+- `POST /Character/:id/Comic`: Retrieves the comics associated with a specific character ID.
 
 ### Mockups
+<img width="1130" alt="Screenshot 2024-02-05 at 3 48 59 PM" src="https://github.com/Mlee8812/marvel-comic-book/assets/97935821/88ebaaa8-0a58-46ca-818f-70523f24caa8">
+<img width="1083" alt="Screenshot 2024-02-05 at 3 49 07 PM" src="https://github.com/Mlee8812/marvel-comic-book/assets/97935821/7f95b355-95c4-4e01-a4f7-fa8bb8a3a9ad">
+<img width="1064" alt="Screenshot 2024-02-05 at 3 49 13 PM" src="https://github.com/Mlee8812/marvel-comic-book/assets/97935821/b6669108-bea7-493e-a251-a8e45148150c">
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
-![image](https://github.com/Mlee8812/Marvel/assets/97935821/46bed3eb-c809-4c61-a244-c66c202e2038)
+### Setup
 
+- Clone Repo
+- Install Node.js and npm if not already installed
+- Navigate to the backend directory
 
-### Data
+### Install dependencies 
+npm install 
 
-The app will handle data related to Marvel characters and their comic books, including titles, publication dates, authors, and storylines.
+### Start the server 
+npm start
 
-![diagram](https://github.com/Mlee8812/Marvel/assets/97935821/ead430e8-f9e3-403c-a077-17146ee5b10f)
+### Start the client
+- Navigate to the frontend directory
 
+### Install dependencies 
+npm install
 
-### Endpoints
+### Start the client 
+npm start
 
-
-GET /characters: Retrieves a list of characters.
-GET /comics: Retrieves comics associated with a specific character.
-
-## Roadmap
-
-Sprint 1: Develop the homepage with a search box and integrate character data fetching.
-Sprint 2: Implement functionality to display a list of characters based on search input.
-Sprint 3: Develop feature to show a list of comics associated with a selected character.
-
-## Nice-to-haves
-
-Future implementation of a user login page.
-Addition of animations and interactive elements using JavaScript libraries.
